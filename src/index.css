@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* fonts*/
+  --primary-font: 'Inter', sans-serif;
+  --secondary-font: 'Actor', sans-serif;
+
+  /*colors*/
+  --gray-color: #bdbdbd;
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,4 +17,11 @@
 a {
   text-decoration: none;
   color: unset;
+}
+
+ul {
+  list-style: none;
+}
+body {
+  background-color: #f9f9f9;
 }

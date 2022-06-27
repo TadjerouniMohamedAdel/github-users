@@ -1,0 +1,74 @@
+.user-card {
+  width: 220px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000428; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #004e92,
+    #000428
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #004e92,
+    #000428
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 8px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+  margin-bottom: 20px;
+}
+.user-card:hover {
+  transform: scale(1.05);
+}
+
+.user-card .imgBox {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 2px solid var(--gray-color);
+  border-radius: 50%;
+}
+.user-card .imgBox img {
+  width: 95%;
+  height: 95%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-card h3 {
+  font-size: 18px;
+  font-family: var(--primary-font);
+  color: #fff;
+  width: 200px;
+  text-align: center;
+  word-break: break-all;
+  height: 40px;
+  margin: 10px 0;
+}
+.user-card .view-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  line-height: 12px;
+  /* identical to box height */
+  font-family: var(--primary-font);
+  color: #ffffff;
+  font-weight: 700;
+  width: 106px;
+  cursor: pointer;
+  height: 30px;
+  background: #2ea44f;
+  border-radius: 5px;
+  border-color: transparent;
+}
