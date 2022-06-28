@@ -1,8 +1,6 @@
 .overview-card {
   width: 849px;
   height: 176px;
-  left: 278px;
-  top: 664px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -52,4 +50,21 @@
   border-radius: inherit;
   height: 100%;
   object-fit: cover;
+}
+@media (max-width: 872px) {
+  .overview-card {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+  }
+  .overview-card .imgbox {
+    width: 400px !important;
+  }
+}
+@media (max-width: 500px) {
+  .overview-card {
+    display: none;
+  }
 }

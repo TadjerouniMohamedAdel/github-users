@@ -19,12 +19,14 @@
     #000428
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100%;
-  height: 550px;
+  height: auto;
+  padding-bottom: 30px;
 }
 .users-container .banner .content {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 40px;
 }
 .users-container .banner .content .right {
   display: flex;
@@ -52,7 +54,11 @@
   height: 100%;
   object-fit: cover;
 }
-
+.users-container .banner .content .left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .users-container .banner .content .left h1 {
   font-family: var(--primary-font);
   font-style: normal;
@@ -72,7 +78,7 @@
   line-height: 23px;
   color: var(--gray-color);
   font-family: var(--secondary-font);
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .users-container .banner .content .left .searchbox {
@@ -162,4 +168,62 @@
   margin-bottom: 30px;
   font-family: var(--primary-font);
   color: #627597;
+}
+
+@media (max-width: 1309px) {
+  .users-container .banner .content .right .imgbox2 {
+    width: 400px;
+    height: 392px;
+  }
+  .users-container .banner .content .right .imgbox {
+    width: 240px;
+    height: 220px;
+  }
+}
+/* @media (max-width: 1080px) {
+  .users-container .banner .content .right .imgbox2 {
+    display: none;
+  }
+  .users-container .banner .content .right .imgbox {
+    right: 0;
+    top: 0in;
+  }
+} */
+@media (max-width: 1080px) {
+  .users-container .banner .content .right .imgbox2 {
+    width: 300px;
+    height: 292px;
+    left: 90px;
+  }
+  .users-container .banner .content .right .imgbox {
+    width: 240px;
+    height: 220px;
+    right: 90px;
+  }
+  .users-container .banner {
+    height: 450px;
+  }
+}
+@media (max-width: 936px) {
+  .users-container .banner .content .right {
+    display: none;
+  }
+  .users-container .banner .content {
+    display: flex;
+    justify-content: center;
+  }
+  .stats ul {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .users-container .banner .stats hr {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media (max-width: 584px) {
+  .users-container .banner {
+    height: 550px;
+  }
 }
