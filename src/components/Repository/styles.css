@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   font-family: var(--primary-font);
+  flex-wrap: wrap;
   color: rgb(9, 105, 218);
   gap: 15px;
 }
@@ -41,6 +42,7 @@
 .repository-container > div {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .repository-container > div span {
   display: flex;

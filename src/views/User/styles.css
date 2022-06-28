@@ -70,6 +70,7 @@
 .user-container .user-info .stat {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .user-container .user-info .stat li {
   display: flex;
@@ -92,4 +93,17 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
+}
+
+@media (max-width: 780px) {
+  .user-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 450px) {
+  .user-container .user-info .imgbox {
+    width: 200px;
+    height: 200px;
+  }
 }
