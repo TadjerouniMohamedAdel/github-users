@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 type Props = {
@@ -13,9 +14,11 @@ const UserCard: React.FC<Props> = ({ user }) => (
       <img src={user.avatar_url} alt="" />
     </div>
     <h3>{user.login}</h3>
-    <button className="view-details" type="button">
-      View Details
-    </button>
+    <Link to={`/users/${user.login}`}>
+      <button className="view-details" type="button">
+        View Details
+      </button>
+    </Link>
   </div>
 );
 export default UserCard;

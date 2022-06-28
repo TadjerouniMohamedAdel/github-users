@@ -14,7 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/users" replace />} />
         <Route path="/users" element={<Users />} />
-        <Route path="/users/:userid" element={<User />} />
+        <Route path="/users/:login" element={<User />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <ReactQueryDevtools initialIsOpen={false} />

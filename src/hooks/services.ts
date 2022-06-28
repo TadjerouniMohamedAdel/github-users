@@ -3,7 +3,12 @@ export const fetchUsers = (search: string) =>
     .then((response) => response.json())
     .then((data) => data);
 
-export const fetchUsers2 = (search: string) =>
-  fetch(`https://api.github.com/search/users?q=${search}`)
+export const fetchUser = (login: string) =>
+  fetch(`https://api.github.com/users/${login}`)
+    .then((response) => response.json())
+    .then((data) => data);
+
+export const fetchRepositories = (login: string) =>
+  fetch(`https://api.github.com/users/${login}/repos`)
     .then((response) => response.json())
     .then((data) => data);

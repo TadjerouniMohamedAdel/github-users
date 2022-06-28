@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React from 'react';
+import React, { FormEvent } from 'react';
 import Loader from '../../components/Loader/Loader';
 import Overview from '../../components/Overview/Overview';
 import UserCard from '../../components/UserCard/UserCard';
@@ -29,7 +29,11 @@ const Users = () => {
   const [search, setSearch] = React.useState('');
   const [inputValue, setInputValue] = React.useState('');
   const { isLoading, users } = useGetUsers(search);
-  console.log(isLoading);
+
+  const submitSearch = (e: FormEvent) => {
+    e.preventDefault();
+    setSearch(inputValue);
+  };
   return (
     <div className="users-container">
       <div className="banner">
@@ -44,17 +48,15 @@ const Users = () => {
               their software on GitHub—the largest and most advanced development
               platform in the world.
             </p>
-            <div className="searchbox">
+            <form className="searchbox" onSubmit={submitSearch}>
               <input
                 type="text"
                 placeholder="Search for a user"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
               />
-              <button type="button" onClick={() => setSearch(inputValue)}>
-                Search on Github
-              </button>
-            </div>
+              <button type="submit">Search on Github</button>
+            </form>
           </div>
           <div className="right">
             <div className="imgbox2">
