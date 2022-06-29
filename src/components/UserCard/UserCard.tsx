@@ -14,10 +14,8 @@ const UserCard: React.FC<Props> = ({ user }) => (
       <img src={user.avatar_url} alt="" />
     </div>
     <h3>{user.login}</h3>
-    <Link to={`/users/${user.login}`}>
-      <button className="view-details" type="button">
-        View Details
-      </button>
+    <Link to={`/users/${user.login}`} className="view-details">
+      View Details
     </Link>
   </div>
 );
