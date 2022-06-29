@@ -9,9 +9,9 @@ import './styles.css';
 
 type RepositoryType = {
   name: string;
-  visibility: 'public' | 'private';
-  language: string;
-  updated_at: string | null;
+  visibility: string;
+  language: string | null;
+  updated_at: Date | null;
   description: string | null;
 };
 const User = () => {

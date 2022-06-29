@@ -4,9 +4,9 @@ import './styles.css';
 type Props = {
   repo: {
     name: string;
-    visibility: 'public' | 'private';
-    language: string;
-    updated_at: string | null;
+    visibility: string;
+    language: string | null;
+    updated_at: Date | null;
     description: string | null;
   };
 };
@@ -16,11 +16,13 @@ const Repository: React.FC<Props> = ({ repo }) => (
     <h3>
       {repo.name} <span>{repo.visibility}</span>
     </h3>
-    <p>{repo.description}</p>
+    <p role="paragraph">{repo.description}</p>
     <div>
-      <span>{repo.language}</span>
-      {repo.updated_at !== null && (
-        <span>Last update: {new Date(repo.updated_at).toDateString()}</span>
+      <span data-testid="language">{repo.language ?? 'Other'}</span>
+      {repo.updated_at !== null && new Date(repo.updated_at) && (
+        <span data-testid="last-update">
+          Last update: {new Date(repo.updated_at).toDateString()}
+        </span>
       )}
     </div>
     <hr />
