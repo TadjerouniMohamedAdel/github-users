@@ -12,13 +12,20 @@ or
 yarn install
 ```
 
+## Testing
+
+```bash
+yarn test
+```
+
 ## Live demo
 
-i deployed the app on netlify : <a href="https://star-wars-twazan.netlify.app" target="_blank">web app</a>
+i deployed the app on netlify : <a href="https://github-users-team.netlify.app/" target="_blank">web app</a>
 
 ## Tech Choices
 
 - Create react app with typescript as template
+- testing: by default create-react-app has a nice pre-config for testing-library
 - setup project with eslint prettier and husky (with lint-stage) for better clean code
 - css for style customization
 - design : inspered from figma community and github website
@@ -27,7 +34,7 @@ i deployed the app on netlify : <a href="https://star-wars-twazan.netlify.app" t
 
 ## Priorities
 
-- i had to prioritize more core requirements for the time that i had (sorry i had a beasy week) so the design is pretty simple and i didn't complete testing for the App component
+I had to prioritize more core requirements for the time that I had (sorry I had a busy week) so the design is pretty pretty simple and I didn't complete App component's test
 
 ## Demand
 
