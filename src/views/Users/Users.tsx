@@ -96,15 +96,19 @@ const Users = () => {
         ) : users?.length === 0 ? (
           <div className="empty">
             <div className="imgbox">
-              <img src="/notfound.png" alt="" />
+              <img src="/notfound.png" alt="" data-testid="no-result" />
             </div>
             <h3>No result</h3>
           </div>
         ) : (
           users !== null &&
-          users.map((user: { login: string; avatar_url: string }) => (
-            <UserCard user={user} key={user.login} />
-          ))
+          users.map(
+            (user: { login: string; avatar_url: string }, index: number) => (
+              <div key={user.login} data-testid={`user-card-${index}`}>
+                <UserCard user={user} />
+              </div>
+            )
+          )
         )}
       </div>
       <Overview />
