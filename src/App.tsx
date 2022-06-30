@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import Error404 from './views/Error404/Error404';
 import User from './views/User/User';
 import Users from './views/Users/Users';
+import Error404 from './components/Error404/Error404';
 
 const App = () => {
   const queryClient = new QueryClient();

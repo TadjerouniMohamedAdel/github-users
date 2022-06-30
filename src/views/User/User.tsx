@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Error404 from '../../components/Error404/Error404';
 import Loader from '../../components/Loader/Loader';
 import Repository from '../../components/Repository/Repository';
 import RepositorySkeleton from '../../components/Repository/RepositorySkeleton';
@@ -16,58 +17,64 @@ type RepositoryType = {
 };
 const User = () => {
   const { login } = useParams();
-  const { isLoading, user } = useGetUser(login || '');
+  const { isLoading, user, isError } = useGetUser(login || '');
   const { isLoading: isLoadingRepositories, repositories } = useGetRepositories(
     login || ''
   );
   return (
     <div className="user">
-      <Link className="back-search" to="/users">
-        {'<  Back To search'}
-      </Link>
-      <div className="user-container">
-        {isLoading ? (
-          <div className="loading-user">
-            <Loader />
-          </div>
-        ) : (
-          <>
-            <div className="user-info">
-              <div className="imgbox">
-                <img src={user.avatar_url} alt="" />
+      {isError ? (
+        <Error404 />
+      ) : (
+        <>
+          <Link className="back-search" to="/users">
+            {'<  Back To search'}
+          </Link>
+          <div className="user-container">
+            {isLoading ? (
+              <div className="loading-user">
+                <Loader />
               </div>
-              <h1>{user.login}</h1>
-              <span>{user.name}</span>
-              <ul className="stat">
-                <li>
-                  <span>Folowing</span> <span>{user.following}</span>
-                </li>
-                <li>
-                  <span>Followers</span> <span>{user.followers}</span>
-                </li>
-                <li>
-                  <span>Repositories</span> <span>{user.public_repos}</span>
-                </li>
-              </ul>
-              <p>{user.bio}</p>
-            </div>
-            <div className="repositories">
-              {isLoadingRepositories ? (
-                <>
-                  <RepositorySkeleton />
-                  <RepositorySkeleton />
-                  <RepositorySkeleton />
-                  <RepositorySkeleton />
-                </>
-              ) : (
-                repositories.map((repo: RepositoryType) => (
-                  <Repository repo={repo} key={repo.name} />
-                ))
-              )}
-            </div>
-          </>
-        )}
-      </div>
+            ) : (
+              <>
+                <div className="user-info">
+                  <div className="imgbox">
+                    <img src={user.avatar_url} alt="" />
+                  </div>
+                  <h1>{user.login}</h1>
+                  <span>{user.name}</span>
+                  <ul className="stat">
+                    <li>
+                      <span>Folowing</span> <span>{user.following}</span>
+                    </li>
+                    <li>
+                      <span>Followers</span> <span>{user.followers}</span>
+                    </li>
+                    <li>
+                      <span>Repositories</span> <span>{user.public_repos}</span>
+                    </li>
+                  </ul>
+                  <p>{user.bio}</p>
+                </div>
+                <div className="repositories">
+                  {isLoadingRepositories ? (
+                    <>
+                      <RepositorySkeleton />
+                      <RepositorySkeleton />
+                      <RepositorySkeleton />
+                      <RepositorySkeleton />
+                    </>
+                  ) : (
+                    repositories.map((repo: RepositoryType) => (
+                      <Repository repo={repo} key={repo.name} />
+                    ))
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 };
